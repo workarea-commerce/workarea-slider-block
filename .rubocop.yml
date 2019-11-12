@@ -1,11 +1,2 @@
-inherit_from: .rails-rubocop.yml
-
-AllCops:
-  Exclude:
-    - 'lib/slider_block.rb'
-    - 'lib/slider_block/**/*'
-
-# Check quotes usage according to lint rule below.
-Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: single_quotes
+inherit_from:
+  - https://raw.githubusercontent.com/workarea-commerce/workarea/master/.rubocop.yml
