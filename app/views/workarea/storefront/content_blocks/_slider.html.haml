@@ -1,0 +1,16 @@
+.slider-content-block{ data: { slick_slider: view_model.content_block_options  } }
+  - view_model.series.each_with_index do |slide, i|
+    - if slide.data[:image].present?
+      .slider-content-block__slide
+        - if slide.data[:content].present? || slide.data[:button_text].present?
+          .slider-content-block__slide-content{ class: slide.content_class, style: slide.content_styles }
+            - if slide.data[:content].present?
+              .slider-content-block__slide-text!= slide.data[:content]
+            - if slide.data[:button_text].present?
+              .slider-content-block__slide-button= link_to slide.data[:button_text], slide.data[:url], class: view_model.button_style_class
+
+        - if slide.data[:url].present?
+          = link_to slide.data[:url], class: 'slider-content-block__slide-link' do
+            = image_tag view_model.find_asset(slide.data[:image]).url, class: 'slider-content-block__slide-image', alt: slide.data[:alt_text].presence
+        - else
+          = image_tag view_model.find_asset(slide.data[:image]).url, class: 'slider-content-block__slide-image', alt: slide.data[:alt_text].presence
