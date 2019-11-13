@@ -25,4 +25,4 @@ See [https://developer.workarea.com](https://developer.workarea.com) for Workare
 License
 --------------------------------------------------------------------------------
 
-Workarea Styled Selects is released under the [Business Software License](LICENSE)
+Workarea Slider Block is released under the [Business Software License](LICENSE)
