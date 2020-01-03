@@ -89,7 +89,7 @@ $(cat CHANGELOG.md)" > CHANGELOG.md'
   system 'git add CHANGELOG.md && git commit -m "Update changelog" && git push origin HEAD'
 
   system "git tag -a v#{Workarea::SliderBlock::VERSION} -m 'Tagging #{Workarea::SliderBlock::VERSION}'"
-  system 'git push --tags'
+  system 'git push origin HEAD --follow-tags'
 
   system 'gem build workarea-slider_block.gemspec'
   system "gem push workarea-slider_block-#{Workarea::SliderBlock::VERSION}.gem --host #{host}"
